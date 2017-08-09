@@ -31,15 +31,13 @@ El diseño del API queda más o menos abierto y cada uno puede implementarlo com
 ```javascript
 let game = new Game(); // o = createGame() o algún mecanismo similar que permita crear más de un juego.
 game.start(); // inicialización del juego.
-console.log( game.status ); // { status: 'playing', winner: null, turn: 'X' }
+console.log( game.status );
 game.play(x, y);
-console.log( game.status ); // { status: 'playing', winner: null, turn: 'O' }
+console.log( game.status );
 game.play(x, y);
-console.log( game.status ); // { status: 'playing', winner: null, turn: 'X' }
+console.log( game.status );
 //...
-console.log( game.status ); // { status: 'tie', winner: null, turn: null }
-// o
-console.log( game.status ); // { status: 'win', winner: 'X', turn: null }
+console.log( game.status );
 game.start(); // inicia otro juego
 ```
 

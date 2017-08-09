@@ -1,0 +1,32 @@
+{
+  "name": "kata-tres-en-raya",
+  "version": "0.1.0",
+  "description": "Un ejercicio de diseño y arquitectura",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec src/test/*-spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gezeta-id/kata-tres-en-raya.git"
+  },
+  "keywords": [
+    "kata",
+    "ejercicio",
+    "javascript",
+    "arquitectura",
+    "diseño"
+  ],
+  "author": "kflynn <kflynn@lpqf.net>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gezeta-id/kata-tres-en-raya/issues"
+  },
+  "homepage": "https://github.com/gezeta-id/kata-tres-en-raya#readme",
+  "devDependencies": {
+    "chai": "^4.1.1",
+    "mocha": "^3.5.0",
+    "sinon": "^3.1.0",
+    "sinon-chai": "^2.12.0"
+  }
+}
