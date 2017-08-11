@@ -54,7 +54,7 @@ describe('Game', function () {
         var g = new Game();
         g.start();
         playSequence(SEQUENCES['2 basic turns'],g);
-        expect(g.getBoard()).to.deep.equal([['X',undefined,undefined],['O',undefined,undefined],[undefined,undefined,undefined]]);
+        expect(g.getBoard()).to.deep.equal([['X',Cell.EMPTY,Cell.EMPTY],['O',Cell.EMPTY,Cell.EMPTY],[Cell.EMPTY,Cell.EMPTY,Cell.EMPTY]]);
     });
 
     it('...a game is won when a player gets three pieces in line', function() {
