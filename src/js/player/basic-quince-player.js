@@ -7,8 +7,9 @@ var LoShu = [6,1,8,7,5,3,2,9,4];
 function move(val) {
     var idx = LoShu.indexOf(val);
     return {
+        x: Math.floor(idx/3),
         y: idx%3,
-        x: Math.floor(idx/3)
+        textCmd: ''+Math.floor(idx/3+1)+['a','b','c'][idx%3]
     };
 }
 
@@ -88,7 +89,7 @@ function generate(board, me) {
 QuincePlayer.prototype.generateMove = function(board) {
     board = mtx.flatten(board);
     if(turn(board) === 0) {
-        return {x: 1, y: 1};
+        return move(5);
     } else {
         return generate(board, this.m);
     }

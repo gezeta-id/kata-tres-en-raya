@@ -11,9 +11,9 @@ var commandPattern = /(^start$|(^[abc][ :-]*[123]$)|(^[123][ :-]*[abc]$))/i;
 
 function outputStatus(game) {
     if (game.status === Game.STATUS.TIE) {
-        return { status: 'TIE', msg: 'It\'s a tie!' };
+        return { status: 'TIE', msg: render(game.getBoard()) };
     } else if (game.status === Game.STATUS.ENDED) {
-        return { status: 'WIN', msg: game.winner + ' wins!' };
+        return { status: 'WIN', msg: render(game.getBoard()), winner: game.winner };
     } else {
         return { status: 'PLAYING', msg: render(game.getBoard()) };
     }
@@ -25,7 +25,7 @@ function valid(cmd) {
 
 function index(match) {
     var t = {
-        'a': 0, 'b':1, 'c': 2, '1': 0, '2': 1, '3': 0
+        'a': 0, 'b':1, 'c': 2, '1': 0, '2': 1, '3': 2
     };
     return t[match];
 };

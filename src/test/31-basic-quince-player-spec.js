@@ -9,9 +9,9 @@ var Game = require('../js/model/game.js');
 var emptyBoard = [[undefined,undefined,undefined],[undefined,undefined,undefined],[undefined,undefined,undefined]];
 var ongoingBoard = [ [ undefined, undefined, 'O' ], [ undefined, 'X', undefined ], [ undefined, undefined, undefined ] ];
 var onlyOneCellEmptyBoard = [ [ 'O', undefined, 'X' ], [ 'O', 'X', 'X' ], [ 'X', 'O', 'X' ] ];
-var onlyCellLeft = {x:0,y:1};
-var centralCell  = {x:1,y:1};
-var acceptableMoves = [ {x:0,y:0}, {x:1,y:0}, {x:2,y:1}, {x:2,y:2} ];
+var onlyCellLeft = {x:0,y:1, textCmd:'1b'};
+var centralCell  = {x:1,y:1, textCmd:'2b'};
+var acceptableMoves = [ {x:0,y:0, textCmd:'1a'}, {x:1,y:0, textCmd:'2a'}, {x:2,y:1, textCmd:'3b'}, {x:2,y:2, textCmd:'3c'} ];
 
 var winnableBoard;
 var blockableBoard;
@@ -44,7 +44,7 @@ var SEQUENCES = {
             {x:1,y:0},
                         {x:2,y:1}
         ],
-        expected: {x:1,y:2}
+        expected: {x:1,y:2, textCmd:'2c'}
     },
     'blockable': {
         seq: [
@@ -53,7 +53,7 @@ var SEQUENCES = {
             {x:2,y:2},
                         {x:0,y:1}
         ],
-        expected: {x:0,y:2}
+        expected: {x:0,y:2, textCmd:'1c'}
     }
 };
 
