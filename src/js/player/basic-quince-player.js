@@ -83,7 +83,10 @@ function generate(board, me) {
         return k;
     },{});
     var bestMoves = currentStatus.empty.sort(function(a,b){ return scores[a] < scores[b]; });
-    return move(bestMoves[0]);
+    bestMoves = bestMoves.slice(0, bestMoves.findIndex(function(m,i,a) {
+        return i===0?false: (scores[a[i-1]] > scores[a[i]]);
+    }));
+    return move(bestMoves[Math.floor(Math.random()*bestMoves.length)]);
 }
 
 QuincePlayer.prototype.generateMove = function(board) {
