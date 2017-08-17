@@ -33,4 +33,8 @@ La interfaz es puramente textual. Está pensada para recibir comandos de texto y
 
 ## Parte III: Jugador Autónomo [Opcional]
 
-[En un próximo commit]
+Se ha implementado un jugador autónomo capaz de producir jugadas razonablemente _no-estúpidas_. No es un gran jugador, porque no hay grandes jugadores de 3 en raya. Pero por lo menos no es tonto.
+
+El jugador es, en realidad, un _jugador de Quince_. Es decir, realmente busca la jugada a realizar manteniendo su propio _cuadrado mágico_ y buscando jugadas en ese espacio.
+
+Además el jugador es completamente independiente del juego: no actúa sobre el juego sino que sólo genera jugadas. Recibe un tablero y produce una jugada.

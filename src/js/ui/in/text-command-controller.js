@@ -60,6 +60,9 @@ function GameController() {
             return exe(action, game);
         }
     };
+    this.getBoard = function() {
+        return game.getBoard();
+    };
 }
 
 module.exports = GameController;

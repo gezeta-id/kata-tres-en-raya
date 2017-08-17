@@ -23,7 +23,14 @@ function toMatrix(w) {
     };
 }
 
+function flatten(m) {
+    return m.reduce(function(a, b) {
+        return a.concat(b);
+    }, []);
+}
+
 module.exports =  {
     combinations: combinations,
-    toMatrix: toMatrix
+    toMatrix: toMatrix,
+    flatten: flatten
 };
