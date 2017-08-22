@@ -10,7 +10,7 @@ var ACTIONS = {
 var commandPattern = /(^start$|(^[abc][ :-]*[123]$)|(^[123][ :-]*[abc]$))/i;
 
 function outputStatus(game) {
-    if (game.status === Game.STATUS.TIE) {
+    if (game.winner === Game.STATUS.TIE) {
         return { status: 'TIE', msg: render(game.getBoard()) };
     } else if (game.status === Game.STATUS.ENDED) {
         return { status: 'WIN', msg: render(game.getBoard()), winner: game.winner };
