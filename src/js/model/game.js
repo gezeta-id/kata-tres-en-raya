@@ -28,6 +28,7 @@ function Game() {
         table = new Board();
         turn = 0;
         this.status = Game.STATUS.PLAYING;
+        this.winner = undefined;
     };
 
     this.play = function(x, y) {
