@@ -11,13 +11,15 @@ function ExternalPlayer(mark, getInput) {
     Object.defineProperty(this, 'm', {
         get: function() { return mark; },
     });
-    Object.defineProperty(this, 'input', {
-        get: getInput,
-    });
+    this.generateMove = function(board) {
+        var input = getInput(board);
+        if (typeof input === 'string') {
+            return { textCmd: input };
+        } else {
+            return input;
+        }
+    };
 }
 
-ExternalPlayer.prototype.generateMove = function(board) {
-    return { textCmd: this.input };
-};
 
 module.exports = ExternalPlayer;

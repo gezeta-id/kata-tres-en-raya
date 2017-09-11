@@ -56,6 +56,18 @@ describe('The Basic External Player...', function () {
         expect(move).to.deep.equal({ textCmd: returnInput });
     });
 
+    it('...calls the passed input function and returns whatever it returns', function() {
+        var returnInput = { x: 1, y: 1, txtCmd: 'a1' };
+        var mockInput = sinon.stub().returns(returnInput);
+
+        var player = new HumanPlayer(PLAYERS[0], mockInput);
+
+        var move = player.generateMove(board);
+
+        expect(mockInput).to.have.been.called;
+
+        expect(move).to.deep.equal(returnInput);
+    });
 });
 
 
