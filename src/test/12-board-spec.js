@@ -26,6 +26,12 @@ describe('Board', function () {
         b.play(0,0, 'X');
         expect(b.empty(0,0)).to.be.false;
     });
+    it('...allows a move to be played on a non empty cell?', function() {
+        var b = new Board();
+        b.play(0,0, 'X');
+        b.play(0,0, 'O');
+        expect(b.empty(0,0)).to.be.false;
+    });
     it('...let\'s search for empty cells', function() {
         var b = new Board();
         b.play(0,0,'X');
