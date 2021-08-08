@@ -1,0 +1,20 @@
+{
+  "devDependencies": {
+    "@tsconfig/node16": "^1.0.1",
+    "@types/chai": "4.2.11",
+    "@types/mocha": "7.0.2",
+    "@types/node": "14.0.11",
+    "@types/sinon-chai": "^3.2.5",
+    "chai": "4.2.0",
+    "mocha": "7.2.0",
+    "sinon": "^11.1.2",
+    "sinon-chai": "^3.7.0",
+    "ts-node": "^10.0.0",
+    "tsify": "^5.0.4"
+  },
+  "scripts": {
+    "test": "mocha -r ts-node/register src/test/**/*.spec.ts",
+    "coverage": "nyc -r lcov -e .ts -x \"*.spec.ts\" npm run test",
+    "build": "browserify src/ts/main.ts -p [ tsify --noImplicitAny ] --standalone wopr.games.ttt -o dist/ttt.js"
+  }
+}
